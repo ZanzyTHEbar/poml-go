@@ -1,0 +1,1550 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://microsoft.github.io/poml/latest/language/standalone/">
+      
+      
+        <link rel="prev" href="../quickstart/">
+      
+      
+        <link rel="next" href="../meta/">
+      
+      
+      <link rel="icon" href="../../media/logo-16-purple.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Write .poml Files - POML Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#poml-standalone-file-mode" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="POML Documentation" class="md-header__button md-logo" aria-label="POML Documentation" data-md-component="logo">
+      
+  <img src="../../media/logo-64-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            POML Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Write .poml Files
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/microsoft/poml" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    microsoft/poml
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  Language
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../api_reference/" class="md-tabs__link">
+          
+  
+  
+  Go SDK
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="POML Documentation" class="md-nav__button md-logo" aria-label="POML Documentation" data-md-component="logo">
+      
+  <img src="../../media/logo-64-white.png" alt="logo">
+
+    </a>
+    POML Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/microsoft/poml" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    microsoft/poml
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Language
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Language
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Write .poml Files
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Write .poml Files
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-standalone-file-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Standalone File Mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template Engine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Template Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expressions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage-in-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage in Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expression-usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expression Usages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#let-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Let Expressions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Let Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax-1-setting-a-variable-from-a-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax 1: Setting a variable from a value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-2-importing-data-from-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax 2: Importing data from a file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-3-importing-data-from-a-file-without-a-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax 3: Importing data from a file without a name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-4-setting-a-variable-using-inline-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax 4: Setting a variable using inline JSON
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-5-setting-a-variable-from-an-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax 5: Setting a variable from an expression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-autocasting-in-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type-Autocasting in Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Attribute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loop-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loop Variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      If Condition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Include Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stylesheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stylesheet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stylesheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-stylesheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Stylesheet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classname-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      ClassName Attribute
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deep Dive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            Deep Dive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IR Specification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Proposals
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            Proposals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/poml_extended/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extended POML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Go SDK
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Go SDK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-standalone-file-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Standalone File Mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template Engine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Template Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expressions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage-in-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage in Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expression-usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expression Usages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#let-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Let Expressions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Let Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax-1-setting-a-variable-from-a-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax 1: Setting a variable from a value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-2-importing-data-from-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax 2: Importing data from a file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-3-importing-data-from-a-file-without-a-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax 3: Importing data from a file without a name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-4-setting-a-variable-using-inline-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax 4: Setting a variable using inline JSON
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-5-setting-a-variable-from-an-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax 5: Setting a variable from an expression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-autocasting-in-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type-Autocasting in Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Attribute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loop-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loop Variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      If Condition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Include Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stylesheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stylesheet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stylesheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-stylesheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Stylesheet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classname-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      ClassName Attribute
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="poml-standalone-file-mode">POML Standalone File Mode<a class="headerlink" href="#poml-standalone-file-mode" title="Permanent link">&para;</a></h1>
+<h2 id="introduction-to-standalone-file-mode">Introduction to Standalone File Mode<a class="headerlink" href="#introduction-to-standalone-file-mode" title="Permanent link">&para;</a></h2>
+<p>POML (Prompting Markup Language) provides a convenient way to create prompts using a markup language that is easy to read and write. The standalone file mode is the most commonly used approach, where you create a file with a <code>.poml</code> extension. This file contains XML-like syntax that POML renders into a prompt. This mode is particularly useful for creating reusable templates and managing complex prompts without embedding POML directly in JSX files or using a Python SDK.</p>
+<p>In this mode, you wrap your content with a top-level <code>&lt;poml&gt;</code> tag, allowing POML to parse and render your markup correctly. Below is a guide on how to effectively use the standalone file mode.</p>
+<h2 id="basic-usage">Basic Usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h2>
+<p>To create a POML file, simply create a file with the <code>.poml</code> extension and wrap your content within the <code>&lt;poml&gt;</code> tag:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&lt;p&gt;</span>Hello,<span class="w"> </span>world!<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p>You can also type anything without a <code>poml</code> tag, and it will be treated as a string. It's called "free text mode" in POML. However, it has several limitations currently, including unabling to render any XML tags wrapped with <code>&lt;&gt;</code>, unabling to use many special characters, and unabling to use all the wonderful features of POML. So, it's always recommended to use the <code>poml</code> tag before everything.</p>
+<p><strong>Tip: Glossary for Beginners:</strong></p>
+<ul>
+<li><strong>Tag:</strong> A tag is a fundamental building block in XML (and POML). It's used to mark the beginning and end of an element. Tags are enclosed in angle brackets (<code>&lt;</code> and <code>&gt;</code>). For example, <code>&lt;p&gt;</code> is an opening tag, and <code>&lt;/p&gt;</code> is a closing tag. Everything between the opening and closing tags is considered part of that element.</li>
+<li><strong>Attribute:</strong> An attribute provides additional information about an element. Attributes are placed inside the opening tag, and they consist of a name and a value (enclosed in double quotes). For example, in <code>&lt;p speaker="human"&gt;</code>, <code>speaker</code> is the attribute name, and <code>"human"</code> is the attribute value.</li>
+<li><strong>Content:</strong> The content is the text or other elements that appear between the opening and closing tags of an element. For example, in <code>&lt;p&gt;Hello, world!&lt;/p&gt;</code>, "Hello, world!" is the content of the <code>&lt;p&gt;</code> element.</li>
+</ul>
+<p><strong>Escape Characters:</strong> In POML, you can use escape characters to include special characters in your content and attribute values. Due to an implementation issue, the escape syntax in POML is slightly different from what you would know in HTML or XML. For example, to include a double quote (<code>"</code>) in your content, you can use <code>#quot;</code> (rather than <code>&amp;quot;</code>). Here are some common escape characters:</p>
+<ol>
+<li><code>#quot;</code> for <code>"</code></li>
+<li><code>#apos;</code> for <code>'</code></li>
+<li><code>#amp;</code> for <code>&amp;</code></li>
+<li><code>#lt;</code> for <code>&lt;</code></li>
+<li><code>#gt;</code> for <code>&gt;</code></li>
+<li><code>#hash;</code> for <code>#</code></li>
+<li><code>#lbrace;</code> for <code>{</code></li>
+<li><code>#rbrace;</code> for <code>}</code></li>
+</ol>
+<p>It's not necessary to use the escape characters for most cases, but they can be helpful when you are having trouble displaying those characters in certain cases.</p>
+<h2 id="template-engine">Template Engine<a class="headerlink" href="#template-engine" title="Permanent link">&para;</a></h2>
+<p>The template engine of POML allows you to incorporate dynamic content and control structures. Here are some key features.</p>
+<h3 id="expressions">Expressions<a class="headerlink" href="#expressions" title="Permanent link">&para;</a></h3>
+<p>You can use expressions enclosed in double curly brackets (<code>{{</code> <code>}}</code>) to evaluate variables or expressions dynamically:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&lt;p&gt;</span>Hello,<span class="w"> </span>{{name}}!<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p>In this example, if <code>name</code> is set to "Alice" (e.g., using a <code>&lt;let&gt;</code> tag, described below), the output will be "Hello, Alice!".</p>
+<h4 id="usage-in-attributes">Usage in Attributes<a class="headerlink" href="#usage-in-attributes" title="Permanent link">&para;</a></h4>
+<p>Expressions can also be used within attribute values:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&lt;task</span><span class="w"> </span><span class="na">caption=</span><span class="s">&quot;Task #{{index}}&quot;</span><span class="nt">&gt;</span>This<span class="w"> </span>is<span class="w"> </span>task<span class="w"> </span>No.<span class="w"> </span>{{index}}.<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p>This renders to the following when <code>index</code> is set to 1.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># Task #1
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>This is task No. 1.
+</code></pre></div>
+<h4 id="expression-usages">Expression Usages<a class="headerlink" href="#expression-usages" title="Permanent link">&para;</a></h4>
+<p>POML supports various JavaScript expressions within the double curly brackets. This includes but is not limited to:</p>
+<ul>
+<li><strong>Variables:</strong>  <code>{{variableName}}</code></li>
+<li><strong>Arithmetic:</strong> <code>{{a + b}}</code>, <code>{{x * y}}</code>, <code>{{count / total}}</code></li>
+<li><strong>String Concatenation:</strong> <code>{{firstName + " " + lastName}}</code></li>
+<li><strong>Array Access:</strong> <code>{{myArray[0]}}</code></li>
+<li><strong>Object Property Access:</strong> <code>{{myObject.propertyName}}</code></li>
+<li><strong>Function Calls:</strong> <code>{{myFunction(arg1, arg2)}}</code> (if <code>myFunction</code> is defined in the context)</li>
+<li><strong>Ternary Operators:</strong> <code>{{condition ? valueIfTrue : valueIfFalse}}</code></li>
+<li><strong>Accessing loop variables:</strong> <code>{{loop.index}}</code> (explained in the "For Attribute" section)</li>
+</ul>
+<h3 id="let-expressions">Let Expressions<a class="headerlink" href="#let-expressions" title="Permanent link">&para;</a></h3>
+<p>The <code>&lt;let&gt;</code> tag allows you to define variables, import data from external files, and set values within your POML template.</p>
+<h4 id="syntax-1-setting-a-variable-from-a-value">Syntax 1: Setting a variable from a value<a class="headerlink" href="#syntax-1-setting-a-variable-from-a-value" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;greeting&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Hello, world!&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&lt;p&gt;</span>{{greeting}}<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p>This will output "Hello, world!".  The <code>value</code> attribute can contain a string, number, or a POML expression.</p>
+<h4 id="syntax-2-importing-data-from-a-file">Syntax 2: Importing data from a file<a class="headerlink" href="#syntax-2-importing-data-from-a-file" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;users&quot;</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;users.json&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&lt;p&gt;</span>First<span class="w"> </span>user:<span class="w"> </span>{{users[0].name}}<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p>This imports the contents of <code>users.json</code> and assigns it to the <code>users</code> variable.  The <code>src</code> attribute specifies the path to the file (relative to the POML file). The optional <code>type</code> attribute can specify the file type (e.g., "json", "text", "csv"). If not provided, POML attempts to infer it from the file extension.</p>
+<h4 id="syntax-3-importing-data-from-a-file-without-a-name">Syntax 3: Importing data from a file without a name<a class="headerlink" href="#syntax-3-importing-data-from-a-file-without-a-name" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&lt;let</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;config.json&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&lt;p&gt;</span>API<span class="w"> </span>Key:<span class="w"> </span>{{apiKey}}<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+If <code>config.json</code> contains <code>{ "apiKey": "your_api_key" }</code>, this will output "API Key: your_api_key". When you use <code>src</code> without <code>name</code>, and the file content is a JSON object, the properties of that object are directly added to the context.</p>
+<h4 id="syntax-4-setting-a-variable-using-inline-json">Syntax 4: Setting a variable using inline JSON<a class="headerlink" href="#syntax-4-setting-a-variable-using-inline-json" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;person&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span>{
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">      </span>&quot;name&quot;:<span class="w"> </span>&quot;Alice&quot;,
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">      </span>&quot;age&quot;:<span class="w"> </span>30
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span>}
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="nt">&lt;/let&gt;</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="nt">&lt;p&gt;</span>Name:<span class="w"> </span>{{person.name}},<span class="w"> </span>Age:<span class="w"> </span>{{person.age}}<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p>This defines a <code>person</code> variable with the given JSON object. You can also specify the <code>type</code> attribute:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;count&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;integer&quot;</span><span class="nt">&gt;</span>5<span class="nt">&lt;/let&gt;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">&lt;p&gt;</span>Count:<span class="w"> </span>{{count}}<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<h4 id="syntax-5-setting-a-variable-from-an-expression">Syntax 5: Setting a variable from an expression<a class="headerlink" href="#syntax-5-setting-a-variable-from-an-expression" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;base&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;increment&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;total&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;{{ base + increment }}&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="nt">&lt;p&gt;</span>Total:<span class="w"> </span>{{<span class="w"> </span>total<span class="w"> </span>}}<span class="nt">&lt;/p&gt;</span><span class="w">  </span><span class="cm">&lt;!-- Output: Total: 15 --&gt;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<h3 id="type-autocasting-in-attributes">Type-Autocasting in Attributes<a class="headerlink" href="#type-autocasting-in-attributes" title="Permanent link">&para;</a></h3>
+<p>The attributes of components will be automatically cast based on their defined types in the component documentation. This means you don't have to worry about manually converting types in many cases.</p>
+<ul>
+<li><strong>Boolean:</strong> If an attribute is defined as a boolean, values like <code>"true"</code>, <code>1</code>, <code>"1"</code>, or <code>{{true}}</code> will be cast to the boolean value <code>true</code>. Similarly, <code>"false"</code>, <code>0</code>, <code>"0"</code>, or <code>{{false}}</code> will be cast to <code>false</code>.</li>
+<li><strong>Number:</strong> If an attribute is defined as a number, values like <code>"123"</code>, <code>45.6</code>, <code>{{anyNumber}}</code> or <code>{{myNumber+1.3}}</code> will be cast to their corresponding numeric values.</li>
+<li><strong>Object:</strong> If an attribute is defined as an object, POML will attempt to parse the attribute value as a JSON string. For example, <code>data="{{{name: 'John', age: 30}}}"</code> or <code>data='{"name":"John","age":30}'</code> will be parsed into the corresponding JavaScript object.</li>
+<li><strong>String:</strong> If an attribute is a string, no casting is performed.</li>
+</ul>
+<p>In the following example, the first auto-casting happened at let, where <code>true</code> is converted to boolean at <code>let</code> expression.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;boolVar&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;boolean&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;numVar&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;number&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;42&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;objVar&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;object&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;{{ { key: &#39;value&#39; } }}&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="nt">&lt;MyComponent</span><span class="w"> </span><span class="na">boolProp=</span><span class="s">&quot;{{boolVar}}&quot;</span><span class="w"> </span><span class="na">numProp=</span><span class="s">&quot;{{numVar}}&quot;</span><span class="w"> </span><span class="na">objProp=</span><span class="s">&quot;{{objVar}}&quot;</span><span class="w"> </span><span class="na">stringProp=</span><span class="s">&quot;hello&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p>If MyComponent is defined with <code>boolProp</code> as boolean, <code>numProp</code> as number, <code>objProp</code> as object, and <code>stringProp</code> as string, the values will be interpreted and auto-casted again when <code>MyComponent</code> is used.</p>
+<h3 id="for-attribute">For Attribute<a class="headerlink" href="#for-attribute" title="Permanent link">&para;</a></h3>
+<p>To loop over a list, use the <code>for</code> attribute. The syntax is <code>for="itemName in listName"</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">&lt;list&gt;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">for=</span><span class="s">&quot;item in [&#39;apple&#39;, &#39;banana&#39;, &#39;cherry&#39;]&quot;</span><span class="nt">&gt;</span>{{item}}<span class="nt">&lt;/item&gt;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="nt">&lt;/list&gt;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p>This will render a list with "apple", "banana", and "cherry".</p>
+<h4 id="loop-variables">Loop Variables<a class="headerlink" href="#loop-variables" title="Permanent link">&para;</a></h4>
+<p>Inside the loop, you have access to special <code>loop</code> variables:</p>
+<ul>
+<li><code>loop.index</code>: The current iteration index (starting from 0).</li>
+<li><code>loop.length</code>: The total number of items in the list.</li>
+<li><code>loop.first</code>: <code>true</code> if it's the first iteration, <code>false</code> otherwise.</li>
+<li><code>loop.last</code>: <code>true</code> if it's the last iteration, <code>false</code> otherwise.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;all_demos&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&#39;[</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="s">    { &quot;input&quot;: &quot;What is your name?&quot;, &quot;output&quot;: &quot;My name is POML.&quot; },</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="s">    { &quot;input&quot;: &quot;What can you do?&quot;, &quot;output&quot;: &quot;I can generate prompts.&quot; }</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="s">]&#39;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="nt">&lt;examples&gt;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="nt">&lt;example</span><span class="w"> </span><span class="na">for=</span><span class="s">&quot;example in all_demos&quot;</span><span class="w"> </span><span class="na">chat=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">caption=</span><span class="s">&quot;Example {{ loop.index + 1 }}&quot;</span><span class="w"> </span><span class="na">captionStyle=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">      </span><span class="nt">&lt;input&gt;</span>{{<span class="w"> </span>example.input<span class="w"> </span>}}<span class="nt">&lt;/input&gt;</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">      </span><span class="nt">&lt;output&gt;</span>{{<span class="w"> </span>example.output<span class="w"> </span>}}<span class="nt">&lt;/output&gt;</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="nt">&lt;/example&gt;</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">  </span><span class="nt">&lt;/examples&gt;</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p>This will generate two examples, with captions "Example 1" and "Example 2", displaying the input and output from each demo in the <code>all_demos</code> array. Note that we use <code>loop.index + 1</code> because <code>loop.index</code> starts from 0.</p>
+<h3 id="if-condition">If Condition<a class="headerlink" href="#if-condition" title="Permanent link">&para;</a></h3>
+<p>You can conditionally render elements using the <code>if</code> attribute:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;isVisible&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;isHidden&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;{{ !isVisible }}&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="nt">&lt;p</span><span class="w"> </span><span class="na">if=</span><span class="s">&quot;isVisible&quot;</span><span class="nt">&gt;</span>This<span class="w"> </span>paragraph<span class="w"> </span>is<span class="w"> </span>visible.<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="nt">&lt;p</span><span class="w"> </span><span class="na">if=</span><span class="s">&quot;isHidden&quot;</span><span class="nt">&gt;</span>This<span class="w"> </span>paragraph<span class="w"> </span>is<span class="w"> </span>hidden.<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p>If <code>isVisible</code> is <code>true</code>, the first paragraph will be rendered. The second paragraph will not be rendered because isHidden is false. The value of <code>if</code> can be a simple variable name (which is treated as a boolean) or a POML expression.</p>
+<h3 id="include-files">Include Files<a class="headerlink" href="#include-files" title="Permanent link">&para;</a></h3>
+<p>You can split prompts into multiple files and include them using the <code>&lt;include&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;snippet.poml&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p>The file specified in <code>src</code> is read and its contents are injected as if they were written in place. Variables from the current context are available inside the included file. The <code>for</code> and <code>if</code> attributes work as expected:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;row.poml&quot;</span><span class="w"> </span><span class="na">for=</span><span class="s">&quot;i in [1,2,3]&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;footer.poml&quot;</span><span class="w"> </span><span class="na">if=</span><span class="s">&quot;showFooter&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<h2 id="stylesheet">Stylesheet<a class="headerlink" href="#stylesheet" title="Permanent link">&para;</a></h2>
+<p>POML allows you to define styles for your elements using the <code>&lt;stylesheet&gt;</code> tag.  This enables you to apply CSS-like styles (or, more generally, component attributes) to your markup.</p>
+<h3 id="using-stylesheet">Using Stylesheet<a class="headerlink" href="#using-stylesheet" title="Permanent link">&para;</a></h3>
+<p>You can define styles within a <code>&lt;stylesheet&gt;</code> tag. The stylesheet must be a valid JSON object and must be placed directly under the root <code>&lt;poml&gt;</code> element.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">&lt;stylesheet&gt;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span>{
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">      </span>&quot;p&quot;:<span class="w"> </span>{
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">        </span>&quot;syntax&quot;:<span class="w"> </span>&quot;json&quot;
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">      </span>}
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span>}
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">  </span><span class="nt">&lt;/stylesheet&gt;</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">  </span><span class="nt">&lt;p&gt;</span>This<span class="w"> </span>text<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>rendered<span class="w"> </span>as<span class="w"> </span>JSON.<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p>In this example, all <code>&lt;p&gt;</code> elements will have their <code>syntax</code> attribute set to <code>"json"</code>. You can set any attribute of a component using the stylesheet.</p>
+<h3 id="classname-attribute">ClassName Attribute<a class="headerlink" href="#classname-attribute" title="Permanent link">&para;</a></h3>
+<p>Elements can be identified with a <code>className</code> attribute for styling.  The stylesheet can then target elements with specific class names using a CSS-like selector syntax (using a dot <code>.</code> before the class name).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="nt">&lt;table</span><span class="w"> </span><span class="na">className=</span><span class="s">&quot;csv&quot;</span><span class="w"> </span><span class="na">records=</span><span class="s">&quot;[[1,2,3],[4,5,6]]&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="nt">&lt;stylesheet&gt;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span>{
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">      </span>&quot;.csv&quot;:<span class="w"> </span>{
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">        </span>&quot;syntax&quot;:<span class="w"> </span>&quot;csv&quot;,
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span>&quot;writerOptions&quot;:<span class="w"> </span>&quot;{\\&quot;csvSeparator\\&quot;:<span class="w"> </span>\\&quot;;\\&quot;,<span class="w"> </span>\\&quot;csvHeader\\&quot;:<span class="w"> </span>false}&quot;
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">      </span>}
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span>}
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span><span class="nt">&lt;/stylesheet&gt;</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p>Here, the <code>&lt;table&gt;</code> element has the class name "csv".  The stylesheet targets elements with the class "csv" (using <code>.csv</code>) and sets their <code>syntax</code> to "csv" and <code>writerOptions</code> to a specific JSON string. Note the escaped backslashes (<code>\\</code>) in the <code>writerOptions</code> value, which are necessary because the stylesheet itself is a JSON string.  This example will render to:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>1;2;3
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>4;5;6
+</code></pre></div>
+<p><strong>NOTE:</strong> <em>The writerOptions API is experimental and is subject to change.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

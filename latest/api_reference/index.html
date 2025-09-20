@@ -1,0 +1,2901 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://microsoft.github.io/poml/latest/api_reference/">
+      
+      
+        <link rel="prev" href="../language/proposals/poml_extended/">
+      
+      
+      
+      <link rel="icon" href="../media/logo-16-purple.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>API Reference - POML Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#poml-api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="POML Documentation" class="md-header__button md-logo" aria-label="POML Documentation" data-md-component="logo">
+      
+  <img src="../media/logo-64-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            POML Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/microsoft/poml" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    microsoft/poml
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+  Language
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Go SDK
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="POML Documentation" class="md-nav__button md-logo" aria-label="POML Documentation" data-md-component="logo">
+      
+  <img src="../media/logo-64-white.png" alt="logo">
+
+    </a>
+    POML Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/microsoft/poml" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    microsoft/poml
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Language
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Language
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/standalone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Write .poml Files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deep Dive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            Deep Dive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/ir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IR Specification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Proposals
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            Proposals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/proposals/poml_extended/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extended POML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Go SDK
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Go SDK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speaker-mode-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎭 Speaker Mode API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎭 Speaker Mode API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speaker-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speaker Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poml-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      POML Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-speaker-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Speaker Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-output-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Output Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-output-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Output Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multimedia-support-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖼️ Multimedia Support API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🖼️ Multimedia Support API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-embedding-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Embedding Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image Embedding Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-file-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. File Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-base64-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Base64 Encoding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mime-type-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      MIME Type Support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multimedia-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multimedia Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processing Behavior
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-reference-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Reference Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base64-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base64 Processing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Missing Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invalid-base64" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invalid Base64
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rich-content-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Rich Content Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Rich Content Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#content-type-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Type Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#richcontent-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      RichContent Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RichContent Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-implementation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-implementation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-content-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixed Content Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#go-implementation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Go Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Go Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#write-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write Function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writeoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      WriteOptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-implementation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📜 JavaScript Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📜 JavaScript Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#markdownwriter-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      MarkdownWriter Class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-write-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Write Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-map-write-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source Map Write Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ Error Handling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛡️ Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-recovery-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Recovery Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Recovery Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safe-template-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safe Template Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-fallbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Fallbacks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Performance Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Performance Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-performance-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Performance Characteristics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-performance-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Performance Characteristics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization Strategies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimization Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#template-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template Caching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch Processing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speaker-mode-not-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speaker Mode Not Working
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multimedia-files-not-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multimedia Files Not Loading
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-expression-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template Expression Errors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debug Mode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debug Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Debug Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Debug Mode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Related Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Contributing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🤝 Contributing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-evolution-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Evolution Guidelines
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      📞 Support
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speaker-mode-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎭 Speaker Mode API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎭 Speaker Mode API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speaker-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speaker Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poml-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      POML Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-speaker-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Speaker Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-output-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Output Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-output-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Output Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multimedia-support-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖼️ Multimedia Support API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🖼️ Multimedia Support API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-embedding-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Embedding Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image Embedding Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-file-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. File Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-base64-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Base64 Encoding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mime-type-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      MIME Type Support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multimedia-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multimedia Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processing Behavior
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-reference-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Reference Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base64-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base64 Processing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Missing Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invalid-base64" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invalid Base64
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rich-content-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Rich Content Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Rich Content Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#content-type-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Type Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#richcontent-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      RichContent Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RichContent Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-implementation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-implementation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-content-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixed Content Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#go-implementation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Go Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Go Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#write-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write Function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writeoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      WriteOptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-implementation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📜 JavaScript Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📜 JavaScript Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#markdownwriter-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      MarkdownWriter Class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-write-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Write Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-map-write-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source Map Write Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ Error Handling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛡️ Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-recovery-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Recovery Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Recovery Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safe-template-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safe Template Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-fallbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Fallbacks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Performance Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Performance Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-performance-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Performance Characteristics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-performance-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Performance Characteristics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization Strategies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimization Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#template-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template Caching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch Processing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speaker-mode-not-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speaker Mode Not Working
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multimedia-files-not-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multimedia Files Not Loading
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-expression-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template Expression Errors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debug Mode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debug Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Debug Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Debug Mode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Related Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Contributing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🤝 Contributing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-evolution-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Evolution Guidelines
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      📞 Support
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="poml-api-reference">POML API Reference<a class="headerlink" href="#poml-api-reference" title="Permanent link">&para;</a></h1>
+<p>This document provides comprehensive API documentation for the advanced features in POML, including speaker mode and multimedia support.</p>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#speaker-mode-api">Speaker Mode API</a></li>
+<li><a href="#multimedia-support-api">Multimedia Support API</a></li>
+<li><a href="#rich-content-types">Rich Content Types</a></li>
+<li><a href="#go-implementation">Go Implementation</a></li>
+<li><a href="#javascript-implementation">JavaScript Implementation</a></li>
+<li><a href="#error-handling">Error Handling</a></li>
+</ul>
+<hr />
+<h2 id="speaker-mode-api">🎭 Speaker Mode API<a class="headerlink" href="#speaker-mode-api" title="Permanent link">&para;</a></h2>
+<p>Speaker mode enables structured conversation flows with automatic role assignment.</p>
+<h3 id="speaker-types">Speaker Types<a class="headerlink" href="#speaker-types" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Speaker</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>system</code></td>
+<td>System instructions and setup</td>
+<td>Initial context, role definition</td>
+</tr>
+<tr>
+<td><code>human</code></td>
+<td>User input and queries</td>
+<td>User messages, questions</td>
+</tr>
+<tr>
+<td><code>ai</code></td>
+<td>AI responses and actions</td>
+<td>Assistant responses, completions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="basic-usage">Basic Usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h3>
+<h4 id="go-implementation">Go Implementation<a class="headerlink" href="#go-implementation" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Basic speaker mode</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nx">opts</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">poml</span><span class="p">.</span><span class="nx">WriteOptions</span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nx">SpeakerMode</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nx">result</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">poml</span><span class="p">.</span><span class="nx">Write</span><span class="p">(</span><span class="nx">pomlContent</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">// result is []poml.Message</span>
+</code></pre></div>
+<h4 id="javascript-implementation">JavaScript Implementation<a class="headerlink" href="#javascript-implementation" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MarkdownWriter</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;poml/writer&#39;</span><span class="p">);</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">writer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MarkdownWriter</span><span class="p">();</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// With source mapping (enables speaker mode)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">writer</span><span class="p">.</span><span class="nx">writeWithSourceMap</span><span class="p">(</span><span class="nx">pomlContent</span><span class="p">);</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">// result contains speaker information</span>
+</code></pre></div>
+<h3 id="poml-syntax">POML Syntax<a class="headerlink" href="#poml-syntax" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">&lt;p</span><span class="w"> </span><span class="na">speaker=</span><span class="s">&quot;system&quot;</span><span class="nt">&gt;</span>You<span class="w"> </span>are<span class="w"> </span>a<span class="w"> </span>helpful<span class="w"> </span>AI<span class="w"> </span>assistant.<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;p</span><span class="w"> </span><span class="na">speaker=</span><span class="s">&quot;human&quot;</span><span class="nt">&gt;</span>Please<span class="w"> </span>help<span class="w"> </span>me<span class="w"> </span>with<span class="w"> </span>this<span class="w"> </span>task.<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">&lt;p</span><span class="w"> </span><span class="na">speaker=</span><span class="s">&quot;ai&quot;</span><span class="nt">&gt;</span>I&#39;ll<span class="w"> </span>assist<span class="w"> </span>you<span class="w"> </span>with<span class="w"> </span>that<span class="w"> </span>request.<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<h3 id="automatic-speaker-detection">Automatic Speaker Detection<a class="headerlink" href="#automatic-speaker-detection" title="Permanent link">&para;</a></h3>
+<p>When speaker mode is enabled without explicit <code>speaker</code> attributes, POML automatically detects speakers based on content patterns:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">&lt;p&gt;</span>System:<span class="w"> </span>Initialize<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>coding<span class="w"> </span>assistant.<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;p&gt;</span>User:<span class="w"> </span>Help<span class="w"> </span>me<span class="w"> </span>write<span class="w"> </span>a<span class="w"> </span>function.<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;p&gt;</span>Assistant:<span class="w"> </span>I&#39;ll<span class="w"> </span>help<span class="w"> </span>you<span class="w"> </span>write<span class="w"> </span>that<span class="w"> </span>function.<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<h3 id="output-format">Output Format<a class="headerlink" href="#output-format" title="Permanent link">&para;</a></h3>
+<h4 id="go-output-structure">Go Output Structure<a class="headerlink" href="#go-output-structure" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Message</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nx">Speaker</span><span class="w"> </span><span class="nx">Speaker</span><span class="w">     </span><span class="s">`json:&quot;speaker&quot;`</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nx">Content</span><span class="w"> </span><span class="kd">interface</span><span class="p">{}</span><span class="w"> </span><span class="s">`json:&quot;content&quot;`</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Speaker</span><span class="w"> </span><span class="kt">string</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nx">SpeakerSystem</span><span class="w"> </span><span class="nx">Speaker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;system&quot;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nx">SpeakerHuman</span><span class="w">  </span><span class="nx">Speaker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;human&quot;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nx">SpeakerAI</span><span class="w">     </span><span class="nx">Speaker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;ai&quot;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">)</span>
+</code></pre></div>
+<h4 id="javascript-output-structure">JavaScript Output Structure<a class="headerlink" href="#javascript-output-structure" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">[</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="s2">&quot;speaker&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;system&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="s2">&quot;content&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;You are a helpful assistant&quot;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="s2">&quot;speaker&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;human&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="s2">&quot;content&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Please help me&quot;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="s2">&quot;speaker&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ai&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="s2">&quot;content&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;I&#39;ll assist you&quot;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="p">]</span>
+</code></pre></div>
+<hr />
+<h2 id="multimedia-support-api">🖼️ Multimedia Support API<a class="headerlink" href="#multimedia-support-api" title="Permanent link">&para;</a></h2>
+<p>POML supports embedding images and other media content directly in prompts.</p>
+<h3 id="image-embedding-methods">Image Embedding Methods<a class="headerlink" href="#image-embedding-methods" title="Permanent link">&para;</a></h3>
+<h4 id="1-file-reference">1. File Reference<a class="headerlink" href="#1-file-reference" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;img</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;diagram.png&quot;</span><span class="w"> </span><span class="na">alt=</span><span class="s">&quot;System architecture diagram&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<h4 id="2-base64-encoding">2. Base64 Encoding<a class="headerlink" href="#2-base64-encoding" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;img</span><span class="w"> </span><span class="na">base64=</span><span class="s">&quot;iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChAI9jzyr5wAAAABJRU5ErkJggg==&quot;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">     </span><span class="na">alt=</span><span class="s">&quot;Small icon&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<h3 id="mime-type-support">MIME Type Support<a class="headerlink" href="#mime-type-support" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>MIME Type</th>
+<th>Support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PNG</td>
+<td><code>image/png</code></td>
+<td>✅ Full</td>
+</tr>
+<tr>
+<td>JPEG/JPG</td>
+<td><code>image/jpeg</code></td>
+<td>✅ Full</td>
+</tr>
+<tr>
+<td>GIF</td>
+<td><code>image/gif</code></td>
+<td>✅ Full</td>
+</tr>
+<tr>
+<td>SVG</td>
+<td><code>image/svg+xml</code></td>
+<td>✅ Full</td>
+</tr>
+<tr>
+<td>WebP</td>
+<td><code>image/webp</code></td>
+<td>✅ Full</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multimedia-attributes">Multimedia Attributes<a class="headerlink" href="#multimedia-attributes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src</code></td>
+<td>File path to image</td>
+<td>No*</td>
+<td><code>src="chart.png"</code></td>
+</tr>
+<tr>
+<td><code>base64</code></td>
+<td>Base64 encoded image data</td>
+<td>No*</td>
+<td><code>base64="iVBOR..."</code></td>
+</tr>
+<tr>
+<td><code>alt</code></td>
+<td>Alternative text description</td>
+<td>Recommended</td>
+<td><code>alt="Sales chart"</code></td>
+</tr>
+</tbody>
+</table>
+<p>*Either <code>src</code> or <code>base64</code> must be provided</p>
+<h3 id="processing-behavior">Processing Behavior<a class="headerlink" href="#processing-behavior" title="Permanent link">&para;</a></h3>
+<h4 id="file-reference-processing">File Reference Processing<a class="headerlink" href="#file-reference-processing" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Reads file from specified path</li>
+<li>Detects MIME type from file extension</li>
+<li>Encodes file content to base64</li>
+<li>Creates multimedia object</li>
+</ol>
+<h4 id="base64-processing">Base64 Processing<a class="headerlink" href="#base64-processing" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Validates base64 format</li>
+<li>Extracts MIME type from data URL (if present)</li>
+<li>Uses provided MIME type or detects from content</li>
+<li>Creates multimedia object</li>
+</ol>
+<h3 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h3>
+<h4 id="missing-files">Missing Files<a class="headerlink" href="#missing-files" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cm">&lt;!-- Graceful fallback for missing files --&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">&lt;img</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;missing.png&quot;</span><span class="w"> </span><span class="na">alt=</span><span class="s">&quot;Fallback description&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="cm">&lt;!-- Result: Placeholder multimedia object --&gt;</span>
+</code></pre></div>
+<h4 id="invalid-base64">Invalid Base64<a class="headerlink" href="#invalid-base64" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cm">&lt;!-- Invalid base64 handled gracefully --&gt;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">&lt;img</span><span class="w"> </span><span class="na">base64=</span><span class="s">&quot;invalid-data&quot;</span><span class="w"> </span><span class="na">alt=</span><span class="s">&quot;Error image&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="cm">&lt;!-- Result: Error multimedia object --&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="rich-content-types">📦 Rich Content Types<a class="headerlink" href="#rich-content-types" title="Permanent link">&para;</a></h2>
+<p>POML supports mixed content types through RichContent arrays.</p>
+<h3 id="content-type-detection">Content Type Detection<a class="headerlink" href="#content-type-detection" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Content Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string</code></td>
+<td>Plain text content</td>
+<td><code>"Hello world"</code></td>
+</tr>
+<tr>
+<td><code>ContentMultiMedia</code></td>
+<td>Image/audio/video content</td>
+<td>Multimedia object</td>
+</tr>
+<tr>
+<td><code>[]interface{}</code></td>
+<td>Mixed content array</td>
+<td><code>[string, multimedia, string]</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="richcontent-structure">RichContent Structure<a class="headerlink" href="#richcontent-structure" title="Permanent link">&para;</a></h3>
+<h4 id="go-implementation_1">Go Implementation<a class="headerlink" href="#go-implementation_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">RichContent</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[]</span><span class="kd">interface</span><span class="p">{}</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kd">type</span><span class="w"> </span><span class="nx">ContentMultiMedia</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nx">Type</span><span class="w">   </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;type&quot;`</span><span class="w">     </span><span class="c1">// MIME type</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nx">Base64</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;base64&quot;`</span><span class="w">   </span><span class="c1">// Base64 encoded data</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="nx">Alt</span><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;alt,omitempty&quot;`</span><span class="w"> </span><span class="c1">// Alternative text</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="javascript-implementation_1">JavaScript Implementation<a class="headerlink" href="#javascript-implementation_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">// Rich content array</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p">[</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="s2">&quot;Text content here&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="s2">&quot;base64&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;iVBORw0KGgoAAAANS...&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="s2">&quot;alt&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Image description&quot;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">  </span><span class="s2">&quot;More text content&quot;</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="p">]</span>
+</code></pre></div>
+<h3 id="mixed-content-example">Mixed Content Example<a class="headerlink" href="#mixed-content-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">&lt;poml&gt;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">&lt;p&gt;</span>Analysis<span class="w"> </span>results:<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nt">&lt;img</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;chart.png&quot;</span><span class="w"> </span><span class="na">alt=</span><span class="s">&quot;Data visualization&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nt">&lt;p&gt;</span>The<span class="w"> </span>chart<span class="w"> </span>above<span class="w"> </span>shows<span class="w"> </span>our<span class="w"> </span>performance<span class="w"> </span>metrics.<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nt">&lt;img</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;details.png&quot;</span><span class="w"> </span><span class="na">alt=</span><span class="s">&quot;Detailed breakdown&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="nt">&lt;p&gt;</span>Key<span class="w"> </span>insights<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>visualizations...<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="nt">&lt;/poml&gt;</span>
+</code></pre></div>
+<p><strong>Output:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">[</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="s2">&quot;Analysis results:&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="nt">&quot;base64&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="nt">&quot;alt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data visualization&quot;</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">  </span><span class="s2">&quot;The chart above shows our performance metrics.&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="nt">&quot;base64&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="nt">&quot;alt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Detailed breakdown&quot;</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">  </span><span class="s2">&quot;Key insights from the visualizations...&quot;</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="p">]</span>
+</code></pre></div></p>
+<hr />
+<h2 id="go-implementation_2">🔧 Go Implementation<a class="headerlink" href="#go-implementation_2" title="Permanent link">&para;</a></h2>
+<h3 id="core-api">Core API<a class="headerlink" href="#core-api" title="Permanent link">&para;</a></h3>
+<h4 id="write-function">Write Function<a class="headerlink" href="#write-function" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">Write</span><span class="p">(</span><span class="nx">body</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">*</span><span class="nx">WriteOptions</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters:</strong>
+- <code>body</code>: POML content as string
+- <code>opts</code>: Write options (optional)</p>
+<p><strong>Returns:</strong>
+- <code>interface{}</code>: Result (string, []Message, or RichContent)
+- <code>error</code>: Error if processing fails</p>
+<h4 id="writeoptions">WriteOptions<a class="headerlink" href="#writeoptions" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">WriteOptions</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nx">SpeakerMode</span><span class="w"> </span><span class="kt">bool</span><span class="w">     </span><span class="c1">// Enable speaker mode output</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nx">BaseDir</span><span class="w">     </span><span class="kt">string</span><span class="w">   </span><span class="c1">// Base directory for file references</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nx">Context</span><span class="w">     </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}</span><span class="w"> </span><span class="c1">// Template context variables</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="message-structure">Message Structure<a class="headerlink" href="#message-structure" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Message</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nx">Speaker</span><span class="w"> </span><span class="nx">Speaker</span><span class="w">     </span><span class="s">`json:&quot;speaker&quot;`</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nx">Content</span><span class="w"> </span><span class="kd">interface</span><span class="p">{}</span><span class="w"> </span><span class="s">`json:&quot;content&quot;`</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">}</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Speaker</span><span class="w"> </span><span class="kt">string</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="nx">SpeakerSystem</span><span class="w"> </span><span class="nx">Speaker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;system&quot;</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="nx">SpeakerHuman</span><span class="w">  </span><span class="nx">Speaker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;human&quot;</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="nx">SpeakerAI</span><span class="w">     </span><span class="nx">Speaker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;ai&quot;</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="p">)</span>
+</code></pre></div>
+<h3 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">// Speaker mode with custom context</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nx">opts</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">poml</span><span class="p">.</span><span class="nx">WriteOptions</span><span class="p">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nx">SpeakerMode</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="nx">BaseDir</span><span class="p">:</span><span class="w">     </span><span class="s">&quot;/path/to/files&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="nx">Context</span><span class="p">:</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}{</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">        </span><span class="s">&quot;user_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Alice&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="s">&quot;api_key&quot;</span><span class="p">:</span><span class="w">   </span><span class="s">&quot;secret&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="p">}</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="nx">result</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">poml</span><span class="p">.</span><span class="nx">Write</span><span class="p">(</span><span class="nx">pomlContent</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="p">)</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">    </span><span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="p">}</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="c1">// Type assertion for speaker mode</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="nx">messages</span><span class="p">,</span><span class="w"> </span><span class="nx">ok</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">result</span><span class="p">.([]</span><span class="nx">poml</span><span class="p">.</span><span class="nx">Message</span><span class="p">)</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="k">if</span><span class="w"> </span><span class="p">!</span><span class="nx">ok</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="w">    </span><span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="s">&quot;Expected speaker messages&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="p">}</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="k">for</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">messages</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%s: %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">msg</span><span class="p">.</span><span class="nx">Speaker</span><span class="p">,</span><span class="w"> </span><span class="nx">msg</span><span class="p">.</span><span class="nx">Content</span><span class="p">)</span>
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="javascript-implementation_2">📜 JavaScript Implementation<a class="headerlink" href="#javascript-implementation_2" title="Permanent link">&para;</a></h2>
+<h3 id="core-api_1">Core API<a class="headerlink" href="#core-api_1" title="Permanent link">&para;</a></h3>
+<h4 id="markdownwriter-class">MarkdownWriter Class<a class="headerlink" href="#markdownwriter-class" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MarkdownWriter</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;poml/writer&#39;</span><span class="p">);</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">writer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MarkdownWriter</span><span class="p">();</span>
+</code></pre></div>
+<h4 id="basic-write-method">Basic Write Method<a class="headerlink" href="#basic-write-method" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">writer</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">pomlContent</span><span class="p">);</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1">// Returns: string (regular mode)</span>
+</code></pre></div>
+<h4 id="source-map-write-method">Source Map Write Method<a class="headerlink" href="#source-map-write-method" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">writer</span><span class="p">.</span><span class="nx">writeWithSourceMap</span><span class="p">(</span><span class="nx">pomlContent</span><span class="p">);</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="c1">// Returns: object with speaker information and rich content</span>
+</code></pre></div>
+<h3 id="advanced-usage_1">Advanced Usage<a class="headerlink" href="#advanced-usage_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MarkdownWriter</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;poml/writer&#39;</span><span class="p">);</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">writer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MarkdownWriter</span><span class="p">();</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1">// Regular mode</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regularResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">writer</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">pomlContent</span><span class="p">);</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Regular output:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">regularResult</span><span class="p">);</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="c1">// Speaker mode with source mapping</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">speakerResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">writer</span><span class="p">.</span><span class="nx">writeWithSourceMap</span><span class="p">(</span><span class="nx">pomlContent</span><span class="p">);</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Speaker output:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">speakerResult</span><span class="p">);</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="c1">// Access rich content</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">speakerResult</span><span class="p">.</span><span class="nx">messages</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">    </span><span class="nx">speakerResult</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">msg</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">msg</span><span class="p">.</span><span class="nx">speaker</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">msg</span><span class="p">.</span><span class="nx">content</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">    </span><span class="p">});</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="p">}</span>
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="c1">// Handle multimedia content</span>
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">speakerResult</span><span class="p">.</span><span class="nx">richContent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="w">    </span><span class="nx">speakerResult</span><span class="p">.</span><span class="nx">richContent</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;string&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Text:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span>
+<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">base64</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Multimedia:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">alt</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
+<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a><span class="w">    </span><span class="p">});</span>
+<a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">writer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MarkdownWriter</span><span class="p">({</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="c1">// Configuration options (if supported)</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nx">enableRichContent</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="nx">speakerMode</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="nx">base64Encoding</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="p">});</span>
+</code></pre></div>
+<hr />
+<h2 id="error-handling_1">🛡️ Error Handling<a class="headerlink" href="#error-handling_1" title="Permanent link">&para;</a></h2>
+<h3 id="go-error-handling">Go Error Handling<a class="headerlink" href="#go-error-handling" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nx">result</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">poml</span><span class="p">.</span><span class="nx">Write</span><span class="p">(</span><span class="nx">pomlContent</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="p">)</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="c1">// Handle specific error types</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="nx">err</span><span class="p">.(</span><span class="kd">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="o">*</span><span class="nx">ParseError</span><span class="p">:</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">        </span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Parse error: %v&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="o">*</span><span class="nx">TemplateError</span><span class="p">:</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">        </span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Template error: %v&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="o">*</span><span class="nx">FileError</span><span class="p">:</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">        </span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;File error: %v&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">    </span><span class="k">default</span><span class="p">:</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">        </span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Unknown error: %v&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">    </span><span class="k">return</span>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="javascript-error-handling">JavaScript Error Handling<a class="headerlink" href="#javascript-error-handling" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">writer</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">pomlContent</span><span class="p">);</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="c1">// Process result</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;ParseError&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;POML parsing failed:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;FileError&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;File loading failed:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Unknown error:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="error-recovery-patterns">Error Recovery Patterns<a class="headerlink" href="#error-recovery-patterns" title="Permanent link">&para;</a></h3>
+<h4 id="safe-template-expressions">Safe Template Expressions<a class="headerlink" href="#safe-template-expressions" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="cm">&lt;!-- Go-style safe evaluation --&gt;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nt">&lt;p&gt;</span>Length:<span class="w"> </span>{{content<span class="w"> </span><span class="err">&amp;&amp;</span><span class="w"> </span>content.length<span class="w"> </span>||<span class="w"> </span>0}}<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="cm">&lt;!-- JavaScript-style optional chaining --&gt;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="nt">&lt;p&gt;</span>Preview:<span class="w"> </span>{{content?.substring(0,<span class="w"> </span>100)<span class="w"> </span>||<span class="w"> </span>&quot;No<span class="w"> </span>content&quot;}}<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
+<h4 id="file-fallbacks">File Fallbacks<a class="headerlink" href="#file-fallbacks" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="cm">&lt;!-- Graceful file handling --&gt;</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nt">&lt;let</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;data.txt&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;content&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nt">&lt;p&gt;</span>Content:<span class="w"> </span>{{content<span class="w"> </span>||<span class="w"> </span>&quot;Default<span class="w"> </span>content&quot;}}<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="performance-considerations">📊 Performance Considerations<a class="headerlink" href="#performance-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="go-performance-characteristics">Go Performance Characteristics<a class="headerlink" href="#go-performance-characteristics" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Startup</strong>: Near-instantaneous</li>
+<li><strong>Simple parsing</strong>: ~200µs</li>
+<li><strong>Complex expressions</strong>: ~400µs</li>
+<li><strong>Speaker mode overhead</strong>: +2-5%</li>
+<li><strong>Memory usage</strong>: Minimal</li>
+</ul>
+<h3 id="javascript-performance-characteristics">JavaScript Performance Characteristics<a class="headerlink" href="#javascript-performance-characteristics" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Startup</strong>: Node.js initialization (~50-100ms)</li>
+<li><strong>Simple parsing</strong>: ~165µs</li>
+<li><strong>Complex expressions</strong>: ~165µs</li>
+<li><strong>Speaker mode overhead</strong>: -22% (faster)</li>
+<li><strong>Memory usage</strong>: V8 runtime overhead</li>
+</ul>
+<h3 id="optimization-strategies">Optimization Strategies<a class="headerlink" href="#optimization-strategies" title="Permanent link">&para;</a></h3>
+<h4 id="template-caching">Template Caching<a class="headerlink" href="#template-caching" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="cm">&lt;!-- Cache expensive operations --&gt;</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;processed_content&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;{{content.replace(/\s+/g, &#39; &#39;).trim()}}&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nt">&lt;p&gt;</span>Processed:<span class="w"> </span>{{processed_content}}<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
+<h4 id="batch-processing">Batch Processing<a class="headerlink" href="#batch-processing" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="cm">&lt;!-- Efficient batch operations --&gt;</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="nt">&lt;let</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;items&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;{{data.split(&#39;\n&#39;)}}&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="nt">&lt;for</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;item&quot;</span><span class="w"> </span><span class="na">in=</span><span class="s">&quot;{{items}}&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="nt">&lt;p&gt;</span>Item<span class="w"> </span>{{loop.index<span class="w"> </span>+<span class="w"> </span>1}}:<span class="w"> </span>{{item}}<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="nt">&lt;/for&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="troubleshooting">🔍 Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
+<h4 id="speaker-mode-not-working">Speaker Mode Not Working<a class="headerlink" href="#speaker-mode-not-working" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom:</strong> Speaker assignments ignored
+<strong>Solution:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="cm">&lt;!-- ✅ Correct --&gt;</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="nt">&lt;p</span><span class="w"> </span><span class="na">speaker=</span><span class="s">&quot;system&quot;</span><span class="nt">&gt;</span>Content<span class="w"> </span>here<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="cm">&lt;!-- ❌ Incorrect --&gt;</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="nt">&lt;p&gt;</span>system:<span class="w"> </span>Content<span class="w"> </span>here<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></p>
+<h4 id="multimedia-files-not-loading">Multimedia Files Not Loading<a class="headerlink" href="#multimedia-files-not-loading" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom:</strong> Placeholder content instead of images
+<strong>Solutions:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="cm">&lt;!-- ✅ Check file path --&gt;</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="nt">&lt;img</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;./images/chart.png&quot;</span><span class="w"> </span><span class="na">alt=</span><span class="s">&quot;Chart&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="cm">&lt;!-- ✅ Use absolute paths --&gt;</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="nt">&lt;img</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;/full/path/to/image.png&quot;</span><span class="w"> </span><span class="na">alt=</span><span class="s">&quot;Image&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="cm">&lt;!-- ✅ Verify file exists --&gt;</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="cm">&lt;!-- Check file permissions and format --&gt;</span>
+</code></pre></div></p>
+<h4 id="template-expression-errors">Template Expression Errors<a class="headerlink" href="#template-expression-errors" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom:</strong> Expression evaluation fails
+<strong>Solutions:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="cm">&lt;!-- ✅ Safe evaluation --&gt;</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="nt">&lt;p&gt;</span>{{content<span class="w"> </span><span class="err">&amp;&amp;</span><span class="w"> </span>content.length<span class="w"> </span>||<span class="w"> </span>0}}<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="cm">&lt;!-- ✅ Method existence check --&gt;</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="nt">&lt;p&gt;</span>{{content?.substring<span class="w"> </span><span class="err">&amp;&amp;</span><span class="w"> </span>content.substring(0,<span class="w"> </span>100)<span class="w"> </span>||<span class="w"> </span>&quot;Fallback&quot;}}<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></p>
+<h3 id="debug-mode">Debug Mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h3>
+<h4 id="go-debug-mode">Go Debug Mode<a class="headerlink" href="#go-debug-mode" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nx">opts</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">poml</span><span class="p">.</span><span class="nx">WriteOptions</span><span class="p">{</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">    </span><span class="nx">Debug</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">  </span><span class="c1">// Enable debug output</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="javascript-debug-mode">JavaScript Debug Mode<a class="headerlink" href="#javascript-debug-mode" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">writer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MarkdownWriter</span><span class="p">({</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">    </span><span class="nx">debug</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c1">// Enable debug logging</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="p">});</span>
+</code></pre></div>
+<hr />
+<h2 id="related-documentation">📚 Related Documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../README.md">README.md</a> - Main project documentation</li>
+<li><a href="../examples/README.md">examples/README.md</a> - Usage examples</li>
+<li><a href="../PERFORMANCE_ANALYSIS.md">PERFORMANCE_ANALYSIS.md</a> - Performance benchmarks</li>
+<li><a href="../INTEGRATION_COMPARISON.md">INTEGRATION_COMPARISON.md</a> - Implementation comparison</li>
+</ul>
+<hr />
+<h2 id="contributing">🤝 Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
+<p>To contribute to the API:</p>
+<ol>
+<li><strong>Add new features</strong> following the established patterns</li>
+<li><strong>Update documentation</strong> when changing APIs</li>
+<li><strong>Add tests</strong> for new functionality</li>
+<li><strong>Follow semantic versioning</strong> for breaking changes</li>
+</ol>
+<h3 id="api-evolution-guidelines">API Evolution Guidelines<a class="headerlink" href="#api-evolution-guidelines" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Backward compatibility</strong>: Maintain existing API contracts</li>
+<li><strong>Deprecation warnings</strong>: Warn before removing features</li>
+<li><strong>Migration guides</strong>: Provide upgrade paths</li>
+<li><strong>Versioning</strong>: Use semantic versioning for releases</li>
+</ul>
+<hr />
+<h2 id="support">📞 Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
+<p>For API-related questions:</p>
+<ul>
+<li><strong>GitHub Issues</strong>: Report bugs and request features</li>
+<li><strong>Discord</strong>: Join community discussions</li>
+<li><strong>Documentation</strong>: Check examples and guides</li>
+</ul>
+<hr />
+<p><em>Last updated: 2024</em>
+<em>API Version: 1.0.0</em>
+<em>Go Implementation: v1.0.0</em>
+<em>JavaScript Implementation: v1.0.0</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
