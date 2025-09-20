@@ -1,0 +1,20 @@
+<poml>
+<let src="medium.poml" name="base" />
+<let src="simple.poml" name="data" />
+
+<p speaker="system">Advanced AI assistant with multimedia capabilities.</p>
+<p speaker="human">Process multiple documents with complex transformations.</p>
+
+<p>Base document: {{base.replace(/\n/g, ' ').trim()}}</p>
+<p>Data analysis: {{data.length}} chars, uppercase: {{data.toUpper().substring(0, 30)}}</p>
+
+<img src="benchmarks/simple.poml" alt="Embedded content" />
+
+<for var="i" in="[1,2,3,4,5]">
+<p>Iteration {{loop.index}}: {{data.substring(loop.index * 10, (loop.index + 1) * 10)}}</p>
+</for>
+
+<p>Complex chain: {{base.replace(/^/gm, '> ').trimStart().toUpper().substring(0, 100)}}</p>
+
+<p speaker="ai">Processing complete with {{loop.index}} iterations.</p>
+</poml>

@@ -1,0 +1,47 @@
+
+Create a blog post with these specifications:
+
+
+
+  Title: [SEO-friendly title]
+  Introduction (100 words)
+  
+    Hook statement
+    Context setting
+    Main points preview
+  
+  
+  Main body (800 words)
+  
+    3-4 main points
+    Each point: [subtitle + 200 words]
+    Include real examples
+    Add actionable tips
+  
+  
+  Conclusion (100 words)
+  
+    Summary of key points
+    Call to action
+  
+  
+
+
+
+
+
+  Tone: Professional but conversational
+  Level: Intermediate audience
+  Voice: Active, engaging
+  Format: Scannable, with subheadings
+
+
+
+
+
+  Practical examples
+  Statistics or research
+  Actionable takeaways
+  Relevant analogies
+
+

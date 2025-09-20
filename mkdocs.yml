@@ -1,0 +1,67 @@
+site_name: POML Documentation
+site_url: https://microsoft.github.io/poml
+repo_url: https://github.com/microsoft/poml
+repo_name: microsoft/poml
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  logo: media/logo-64-white.png
+  favicon: media/logo-16-purple.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+nav:
+  - Language:
+      - Getting Started: index.md
+      - Quick Start: language/quickstart.md
+      - Write .poml Files: language/standalone.md
+      - Meta: language/meta.md
+      - References:
+          - Components: language/components.md
+      - Deep Dive:
+          - IR Specification: language/ir.md
+      - Proposals:
+          - Extended POML: language/proposals/poml_extended.md
+  - Go SDK:
+      - API Reference: api_reference.md
+
+extra:
+  version:
+    provider: mike
+    default: latest

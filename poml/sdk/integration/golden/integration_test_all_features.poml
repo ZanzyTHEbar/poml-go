@@ -1,0 +1,39 @@
+<poml>
+<!-- Integration Test: All Features Combined -->
+<!-- This file tests speaker mode, multimedia, complex expressions, loops, and template evaluation -->
+
+<let src="105_write_blog_post.poml" name="blog_post" />
+<let src="106_research.poml" name="research" />
+<let src="202_arc_agi.poml" name="arc_agi" />
+
+<!-- Speaker mode demonstration -->
+<p speaker="system">You are an AI assistant with multimedia capabilities.</p>
+<p speaker="human">Please analyze this document and create a summary with visualizations.</p>
+
+<!-- Complex expression evaluation -->
+<p>
+Processing document: {{blog_post.replace(/^/gm, '  ').trimStart().length}} characters
+</p>
+
+<!-- Multimedia content -->
+<p>
+Here's an example image: <img src="104_chart_price.png" alt="Stock price chart" />
+And another one: <img base64="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChAI9jzyr5wAAAABJRU5ErkJggg==" alt="Test image" />
+</p>
+
+<!-- Loop with complex expressions -->
+<for var="item" in="['blog_post', 'research', 'arc_agi']">
+<p>
+Document {{loop.index + 1}}: {{item}}
+Summary: {{item.replace(/^/gm, '  ').trimStart().substring(0, 100)}}...
+</p>
+</for>
+
+<!-- Template expressions with method chaining -->
+<p>
+Final analysis: {{blog_post.replace(/^/gm, ' ').trimStart().toUpper().substring(0, 50)}}
+</p>
+
+<!-- Speaker mode conclusion -->
+<p speaker="ai">I've processed all documents and created visualizations as requested.</p>
+</poml>

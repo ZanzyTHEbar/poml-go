@@ -1,0 +1,384 @@
+body {
+  --poml-padding: calc(var(--vscode-editor-font-size) * 0.8);
+  --poml-padding-02: calc(var(--poml-padding) * 0.2);
+  --poml-padding-035: calc(var(--poml-padding) * 0.35);
+  --poml-padding-05: calc(var(--poml-padding) * 0.5);
+  --poml-padding-08: calc(var(--poml-padding) * 0.8);
+  --poml-padding-15: calc(var(--poml-padding) * 1.5);
+
+  --poml-font-family: var(--vscode-font-family);
+  --poml-font-size: var(--vscode-editor-font-size);
+  --poml-font-size-08: calc(var(--vscode-editor-font-size) * 0.8);
+  --poml-font-size-09: calc(var(--vscode-editor-font-size) * 0.9);
+  --poml-font-size-12: calc(var(--vscode-editor-font-size) * 1.2);
+  --poml-font-size-15: calc(var(--vscode-editor-font-size) * 1.5);
+  --poml-font-size-20: calc(var(--vscode-editor-font-size) * 2);
+
+  --poml-color-border: var(--vscode-editorRuler-foreground);
+  --poml-color-background: var(--vscode-editor-background);
+  --poml-color-background-code: var(--vscode-textPreformat-background);
+  --poml-color-text: var(--vscode-editor-foreground);
+
+  font-size: var(--poml-font-size);
+  line-height: var(--vscode-editor-line-height);
+  color: var(--poml-color-text);
+  padding-top: var(--poml-padding);
+  padding-bottom: var(--poml-padding);
+}
+
+.vscode-body {
+/*   position: fixed;
+  width: 100%;
+  height: 100%;
+    */
+  font-family: var(--poml-font-family);
+  font-size: var(--poml-font-size);
+  line-height: var(--vscode-editor-line-height);
+  color: var(--poml-color-text);
+  padding-top: var(--poml-padding);
+  padding-bottom: var(--poml-padding);
+  background: var(--poml-color-background);
+}
+
+.hidden {
+  display: none;
+}
+
+/* toolbar */
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--poml-padding);
+}
+
+.toolbar-buttons {
+  display: flex;
+  gap: var(--poml-padding);
+  align-items: center;
+}
+
+.toolbar-files {
+  display: flex;
+  gap: var(--poml-padding-05);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.chips.hidden {
+  display: none;
+}
+
+.toolbar .button {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  gap: var(--poml-padding-05);
+  padding: var(--poml-padding-035) var(--poml-padding-05);
+  cursor: default;
+  font-size: var(--poml-font-size);
+  border: 1px solid var(--vscode-editorWidget-border);
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.toolbar .button:hover, .toolbar .button.menu-selection.active {
+  background: var(--vscode-toolbar-hoverBackground);
+}
+
+.toolbar .button:active {
+  background: var(--vscode-toolbar-activeBackground);
+}
+
+.toolbar .button .avatar, .toolbar .button .expand {
+  height: var(--poml-font-size-20);
+  width: var(--poml-font-size-20);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.toolbar .button>.content {
+  margin-right: var(--poml-padding-035);
+}
+
+.toolbar .button .expand {
+  width: auto;
+}
+
+.toolbar .button .badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--vscode-badge-background);
+  color: var(--vscode-badge-foreground);
+  border-radius: 50%;
+  width: var(--poml-font-size-15);
+  height: var(--poml-font-size-15);
+  line-height: var(--poml-font-size);
+}
+
+.toolbar .button .avatar .codicon {
+  font-size: var(--poml-font-size-15);
+}
+
+.toolbar .button .expand .codicon {
+  font-size: var(--poml-font-size);
+}
+
+.toolbar .button.onoff.active {
+  border: 1px solid var(--vscode-focusBorder);
+  background: var(--vscode-editor-selectionBackground);
+}
+
+.toolbar .button .menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: var(--poml-padding-05);
+  background: var(--vscode-editorWidget-background);
+  border: 1px solid var(--vscode-editorWidget-border);
+  border-radius: 4px;
+  min-width: calc(var(--poml-font-size) * 15);
+  box-shadow: 0 2px 8px var(--vscode-widget-shadow);
+  z-index: 1000;
+}
+
+.toolbar .menu-selection.active .menu {
+  display: block;
+}
+
+/* Menu item styles */
+.toolbar .menu .item {
+  display: flex;
+  align-items: center;
+  padding: var(--poml-padding-05);
+  gap: var(--poml-padding-05);
+  cursor: default;
+}
+
+.toolbar .menu .item:hover {
+  background: var(--vscode-list-hoverBackground);
+}
+
+.chips {
+  display: flex;
+  gap: var(--poml-padding-05);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.chip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--poml-padding-02) var(--poml-padding-035);
+  border: 1px solid var(--vscode-editorWidget-border);
+  border-radius: 4px;
+  font-size: var(--poml-font-size-08);
+}
+
+.chip .content {
+  color: var(--vscode-editor-foreground);
+  cursor: default;
+}
+
+.chip .codicon {
+  padding: 0 var(--poml-padding-02);
+  font-size: var(--poml-font-size) !important;
+}
+
+.chip .remove {
+  margin-left: var(--poml-padding-02);
+  padding-right: 0;
+  cursor: pointer;
+}
+
+.chip .remove:hover {
+  background: var(--vscode-toolbar-hoverBackground);
+}
+
+.chip.add {
+  cursor: pointer;
+}
+
+.chip.add:hover {
+  background: var(--vscode-toolbar-hoverBackground);
+}
+
+.menu .item .avatar {
+  height: var(--poml-font-size-15);
+  width: var(--poml-font-size-15);
+  opacity: 0;
+}
+
+.menu .item.selected .avatar {
+  opacity: 1;
+}
+
+select {
+  background-color: var(--vscode-dropdown-background);
+  border-radius: 0;
+  color: var(--vscode-dropdown-foreground);
+  border: var(--vscode-dropdown-border);
+  padding: var(--poml-padding-05);
+}
+
+pre {
+  font-family: var(--vscode-editor-font-family);
+  background-color: var(--poml-color-background-code);
+  white-space: pre-wrap;
+  padding: var(--poml-padding-05);
+  line-height: 1.2em;
+  margin: 0;
+}
+
+pre code {
+  background-color: transparent;
+}
+
+.vscode-form {
+  display: flex;
+}
+
+.vscode-form-input {
+  flex: 1;
+  margin-right: var(--vscode-editor-font-size);
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.code-non-chat {
+  margin: var(--poml-padding) 0;
+}
+
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  gap: var(--poml-padding-08);
+  padding: var(--poml-padding-15) 0;
+}
+
+.chat-message:not(:last-child) {
+  border-bottom: 1px solid var(--poml-color-border);
+}
+
+.chat-message-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.chat-message-header .content {
+  align-items: center;
+  display: flex;
+  gap: var(--poml-padding);
+}
+
+.chat-message-header .content .avatar {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: var(--poml-font-size-20);
+  width: var(--poml-font-size-20);
+  justify-content: center;
+  outline: 1px solid var(--poml-color-border);
+}
+
+.chat-message-header .content .avatar .codicon {
+  color: var(--poml-color-text);
+  font-size: var(--poml-font-size-12);
+}
+
+.chat-message-header .content .name {
+  font-weight: bold;
+  font-size: var(--poml-font-size-12);
+  margin: 0;
+}
+
+.chat-message-header .token-count {
+  margin-left: var(--poml-padding);
+  font-weight: normal;
+  font-size: var(--poml-font-size-09);
+  color: var(--vscode-descriptionForeground);
+}
+
+.chat-message-toolbar {
+  position: absolute;
+  right: 0;
+  gap: var(--poml-padding);
+  align-items: center;
+  display: flex;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.chat-message-toolbar .toolbar-item {
+  align-items: center;
+  cursor: pointer;
+  display: block;
+  justify-content: center;
+  position: relative;
+}
+
+.chat-message-toolbar .toolbar-item .codicon {
+  position: relative;
+  padding: var(--poml-padding-02);
+  font-size: var(--poml-font-size-12);
+  color: var(--vscode-editor-foreground);
+  height: var(--poml-font-size-12);
+  width: var(--poml-font-size-12);
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+
+.chat-message-toolbar .toolbar-item:hover {
+  background-color: var(--vscode-toolbar-hoverBackground);
+}
+
+.main-container {
+  padding: var(--poml-padding-15) 0;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: auto;
+  font-size: var(--poml-font-size-08);
+  background-color: var(--poml-color-background);
+  color: var(--poml-color-text);
+  text-align: center;
+  border: 1px solid var(--poml-color-border);
+  border-radius: 3px;
+  padding: var(--poml-padding-05);
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -50%;
+}
+
+.tooltip-long {
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.tooltip-anchor:hover .tooltip {
+  visibility: visible;
+}
+
+.chat-message-content {
+  padding: 0 var(--poml-padding-02);
+}
+
+.token-total {
+  text-align: right;
+  font-size: var(--poml-font-size-09);
+  color: var(--vscode-descriptionForeground);
+}

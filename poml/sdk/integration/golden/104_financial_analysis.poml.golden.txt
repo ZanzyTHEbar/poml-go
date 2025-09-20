@@ -1,0 +1,19 @@
+
+
+
+
+Given the stock ticker, provide a full and up-to-date financial analysis covering the following aspects, cite sources.
+
+
+
+Current stock price, recent performance trends, and historical comparison.
+Key financial ratios (e.g., P/E ratio, forward P/E, Price/Free cash flow, EPS growth this year, Return on equity, return on investment, current ratio, net profit margin, debt-to-equity ratio) and what they indicate about the company's financial health.
+Support and resistance prices of the stock and how current indicators may drive the direction of the stock
+Recent earnings reports, revenue growth or decline, and net income trends over the past quarter. Please also include if latest EPS report beat estimates.
+Industry comparison to determine the company's standing relative to its peers.
+Current analyst ratings, target price forecasts, and recent upgrades or downgrades.
+Overall summary on whether the stock is considered a 'buy', 'hold', or 'sell' based on current financial data and market sentiment.
+
+
+
+

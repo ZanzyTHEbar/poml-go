@@ -1,0 +1,40 @@
+
+Senior Systems Architecture Consultant
+Legacy System Migration Analysis
+
+
+  
+    Fortune 500 retail company
+    Current system: 15-year-old monolithic application
+    500+ daily users
+    99.99% uptime requirement
+  
+
+
+
+  
+    Migration risks and mitigation strategies
+    Cloud vs hybrid options
+    Cost-benefit analysis
+    Implementation roadmap
+  
+
+
+
+  
+    Executive brief (250 words)
+    Technical details (500 words)
+    Risk matrix
+    Timeline visualization
+    Budget breakdown
+  
+
+
+
+  
+    Must maintain operational continuity
+    Compliance with GDPR and CCPA
+    Maximum 18-month implementation window
+    
+  
+

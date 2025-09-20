@@ -1,0 +1,6 @@
+<poml>
+<let src="simple.poml" name="content" />
+<p speaker="system">You are a helpful assistant.</p>
+<p speaker="human">Please process this content: {{content.length}} characters</p>
+<p>Content preview: {{content.substring(0, 50)}}...</p>
+</poml>

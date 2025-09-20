@@ -1,0 +1,2 @@
+go/poml/generate_golden.go:10:2: no required module provides package github.com/ZanzyTHEbar/poml/sdk/go/poml: go.mod file not found in current directory or any parent directory; see 'go help modules'
+go/poml/generate_golden.go:11:2: no required module provides package github.com/ZanzyTHEbar/poml/sdk/go/poml/writer: go.mod file not found in current directory or any parent directory; see 'go help modules'

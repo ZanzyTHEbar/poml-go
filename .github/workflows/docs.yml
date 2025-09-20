@@ -1,0 +1,70 @@
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for versioning
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.21"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies for documentation
+        run: |
+          pip install mkdocs mkdocs-material mike
+
+      - name: Configure Git for Mike
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Get version from Go module
+        id: version
+        run: |
+          # Extract version from git tag or use default
+          if [[ "${{ github.ref }}" == refs/tags/v* ]]; then
+            VERSION=${GITHUB_REF#refs/tags/v}
+          else
+            VERSION="latest"
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "Documentation version: $VERSION"
+
+      - name: Deploy documentation with Mike
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/v* ]]; then
+            # Tagged release - deploy as versioned docs
+            VERSION="${{ steps.version.outputs.VERSION }}"
+            mike deploy --push --update-aliases $VERSION stable
+          elif [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            # Main branch - deploy as latest docs
+            mike deploy --push latest
+            mike set-default --push latest
+          fi

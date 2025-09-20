@@ -1,0 +1,5 @@
+<poml>
+  <title>Hello</title>
+  <if cond="true">Visible</if>
+  <for var="i" in="[1,2]"><item>{{i}}</item></for>
+</poml>

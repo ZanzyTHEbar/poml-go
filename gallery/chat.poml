@@ -1,0 +1,6 @@
+<poml>
+  <task>{{ prompt }}</task>
+  <cp caption="References">
+    <document src="{{ file }}" parser="txt" for="file in files" />
+  </cp>
+</poml>

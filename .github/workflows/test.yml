@@ -1,0 +1,97 @@
+name: Full Test
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            go-version: "1.21"
+          - os: ubuntu-24.04-arm
+            go-version: "1.21"
+          - os: windows-latest
+            go-version: "1.21"
+          - os: macos-13
+            go-version: "1.21"
+          - os: macos-latest
+            go-version: "1.21"
+      fail-fast: false
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go-version }}
+
+      - name: Cache Go modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/go/pkg/mod
+            ~/.cache/go-build
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - name: Download Go dependencies
+        run: |
+          cd go
+          go mod download
+
+      - name: Run Go tests
+        run: |
+          cd go
+          go test -v ./...
+
+      - name: Run Go benchmarks
+        run: |
+          cd go
+          go test -bench=. -benchmem ./...
+
+      - name: Run Go linter
+        uses: golangci/golangci-lint-action@v4
+        with:
+          version: latest
+          working-directory: go
+
+  docs:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for versioning
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install documentation dependencies
+        run: |
+          pip install mkdocs mkdocs-material
+
+      - name: Build documentation
+        run: mkdocs build
+
+      - name: Upload documentation artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation-site
+          path: site/

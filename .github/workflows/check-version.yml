@@ -1,0 +1,92 @@
+name: Check Version
+
+on:
+  workflow_call:
+    outputs:
+      version:
+        description: "The version from the Go module"
+        value: ${{ jobs.check-version.outputs.version }}
+      tag_version:
+        description: "The version from the git tag"
+        value: ${{ jobs.check-version.outputs.tag_version }}
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      version: ${{ steps.get_version.outputs.version }}
+      tag_version: ${{ steps.get_tag.outputs.tag_version }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.25"
+
+      - name: Get version from Go module
+        id: get_go_version
+        run: |
+          # Extract version from go.mod file or use git tag as fallback
+          if [ -f "go.mod" ]; then
+            # Try to get version from module path (might contain version info)
+            MODULE_PATH=$(grep '^module ' go.mod | awk '{print $2}')
+            echo "Go module: $MODULE_PATH"
+
+            # For now, we'll use a placeholder version - this should be updated
+            # to extract version from a VERSION file or similar
+            GO_VERSION="0.1.0"
+            echo "go_version=$GO_VERSION" >> $GITHUB_OUTPUT
+            echo "Go version: $GO_VERSION"
+          else
+            echo "Error: go.mod not found"
+            exit 1
+          fi
+
+      - name: Set primary version
+        id: get_version
+        run: |
+          # Use Go module version as the primary version
+          VERSION=${{ steps.get_go_version.outputs.go_version }}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Primary version: $VERSION"
+
+      - name: Get tag version
+        id: get_tag
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            TAG_VERSION=${GITHUB_REF#refs/tags/v}
+          else
+            # For workflow_dispatch, use the primary version
+            TAG_VERSION=${{ steps.get_version.outputs.version }}
+            echo "Warning: Not triggered by tag, using project version for testing"
+          fi
+          echo "tag_version=$TAG_VERSION" >> $GITHUB_OUTPUT
+          echo "Tag version: $TAG_VERSION"
+
+      - name: Verify Go module
+        run: |
+          if [ ! -f "go.mod" ]; then
+            echo "Error: go.mod file not found"
+            exit 1
+          fi
+
+          echo "✅ Go module found and valid"
+
+      - name: Verify version matches tag
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            PRIMARY_VERSION=${{ steps.get_version.outputs.version }}
+            TAG_VERSION=${{ steps.get_tag.outputs.tag_version }}
+            
+            if [ "$PRIMARY_VERSION" != "$TAG_VERSION" ]; then
+              echo "Error: Primary version ($PRIMARY_VERSION) does not match tag ($TAG_VERSION)"
+              exit 1
+            fi
+            echo "✅ Version check passed!"
+          else
+            echo "Skipping version check for workflow_dispatch"
+          fi
